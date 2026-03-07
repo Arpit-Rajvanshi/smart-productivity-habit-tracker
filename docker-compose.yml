@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: nginx:alpine
+    container_name: sps_frontend
+    ports:
+      - "3000:80"
+    restart: always
+
+  backend:
+    image: node:18-alpine
+    container_name: sps_backend
+    working_dir: /app
+    command: sh -c "node -e \"require('http').createServer((req,res)=>res.end('Backend running')).listen(5000)\""
+    ports:
+      - "5000:5000"
+    restart: always
+
+  mongodb:
+    image: mongo:6
+    container_name: sps_mongodb
+    ports:
+      - "27017:27017"
+    restart: always
