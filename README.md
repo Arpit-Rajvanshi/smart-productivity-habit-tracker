@@ -1,3 +1,15 @@
+## Quick Start – Local Development
+
+### Prerequisites
+- Git
+- Docker Desktop
+
+### Steps
+1. Clone repo
+   ```bash
+   git clone https://github.com/Arpit-Rajvanshi/smart-productivity-habit-tracker.git
+   cd smart-productivity-habit-tracker
+
 # Smart Productivity & Habit Tracking System
 
 ## 1. Project Name & Overview
@@ -66,3 +78,24 @@ Branch naming format:
 - feature/<feature-name>
 Example:
 - feature/readme-vision-doc
+
+## Software Design
+
+This project follows a layered architecture separating the frontend, API layer, business logic, and database layer.
+
+### Architecture Diagram
+![Architecture](design/architecture.png)
+
+### Use Case Diagram
+![Use Case](design/usecase.png)
+
+### Database ER Diagram
+![ER Diagram](design/er-diagram.png)
+
+### UI Prototype (Figma)
+
+Login Screen  
+Dashboard  
+Task Management  
+Habit Tracker  
+Analytics Dashboard

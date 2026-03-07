@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Productivity Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3caff6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101b22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary size-10 rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-none">TaskFlow</h1>
+<p class="text-slate-500 text-xs mt-1">Productivity Pro</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined filled-icon">check_box</span>
+<span class="text-sm font-semibold">My Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">auto_graph</span>
+<span class="text-sm font-medium">Habit Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">calendar_month</span>
+<span class="text-sm font-medium">Calendar</span>
+</a>
+<div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Storage</p>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-2">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+<p class="text-xs text-slate-500">75% of your plan used</p>
+<button class="mt-4 w-full bg-primary text-white py-2 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+                    Upgrade to Pro
+                </button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-16 flex-shrink-0 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Search tasks, tags, or habits..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:border-slate-800 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-bold leading-none">Alex Rivers</p>
+<p class="text-[10px] text-slate-500 mt-1">Free Plan</p>
+</div>
+<div class="size-9 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar of a young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtBNYmyYZBn5m0AxKjxT1rrG46AFBJLGYK2gd20j5OK6v1YsOfZVt-H1MPFFDo6ksUh-dz5RlNvJ--42xVKDHxuIlEhQNJZ1r4h7ssoqJm1yaKjNILOzsUo9doiBNcnuJYaaqnJkGCykTHlVB5VMX5RErKedJycTlGsW8Q_aKnwLbFfKVa10gE2HPik9i0DgMVeIgqJWmgdiPJvniraGRR2v6gF4jF7bwAW70UswM-o_bNtjIKfjY4NA05e5g1q-xnDe-Q4twCjWI"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-5xl mx-auto">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight">Focus Mode</h2>
+<p class="text-slate-500 mt-1">You have 5 pending tasks for today.</p>
+</div>
+<button class="bg-primary text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">add</span>
+                            Add New Task
+                        </button>
+</div>
+<div class="flex gap-2 mb-8 overflow-x-auto pb-2">
+<button class="px-4 py-2 rounded-full bg-primary text-white text-sm font-bold whitespace-nowrap">All Tasks</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:border-primary transition-colors">Work</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:border-primary transition-colors">Personal</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:border-primary transition-colors">Health</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap hover:border-primary transition-colors">Urgent</button>
+</div>
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">pending_actions</span>
+                                Pending Tasks
+                            </h3>
+<span class="text-xs font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-full">5 Tasks</span>
+</div>
+<div class="grid gap-3">
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold group-hover:text-primary transition-colors">Finalize Q4 Marketing Presentation</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase">
+<span class="material-symbols-outlined text-xs">calendar_today</span> Due Today
+                                        </span>
+<span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase">Work</span>
+</div>
+</div>
+<div class="flex -space-x-2">
+<img class="size-6 rounded-full border-2 border-white dark:border-slate-900 object-cover" data-alt="Team member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_W001t7jiIrqRtpifp1JGN96BmdhTlBegr2xt07CYs-E4S8DPAmxXMblcRXuv0lztJb2Uv8JvdKitimrwCeVjxSPCc2hujc_GACtdUrcnQUwFa_E2aWj-X2y3lpafk-4T4x4epqayGs3ffMoXEyLJQVNNx5PgrHlW7Q_xUzydOVkVRn1VFI341QtUW3wZXx2u5-6cEXhVYrdpgYvjGspqXO45J-94-ldxgX0eYU3j8C-TQP5LHDgU4GCGgad1QG9d9gCkS2kO6H8"/>
+<img class="size-6 rounded-full border-2 border-white dark:border-slate-900 object-cover" data-alt="Team member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_iZkxGBj0mWPE9dXPtMwv0Vpx1HOhwiRQfOu0kZLHSmf5qtKsLLt9IhXZBxyv_FDo5WIjBMF3_iqtxT04jS2HkIXDxVNuGS_sIe-x4CA2DzWScgbucYIthw12D_fO7U9mCX4bVHoWU0EDgAW7tRnkAbxTohDNY3uifAvBGBVXHatafpiQ0ycSYMmN2JcY2KAtgLpfxHCu1iLoqNvXXoMUqTiOdCfun2psr-EmjVpBmwup3FcAGaXkqA4DfncysAoLGhg9rd9fGQ"/>
+</div>
+<button class="p-1 text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold group-hover:text-primary transition-colors">Daily 30-minute Cardio Session</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-[10px] font-bold text-orange-500 uppercase">
+<span class="material-symbols-outlined text-xs">local_fire_department</span> 12 Day Streak
+                                        </span>
+<span class="px-2 py-0.5 rounded-md bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold uppercase">Health</span>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold group-hover:text-primary transition-colors">Update personal portfolio website</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase">
+<span class="material-symbols-outlined text-xs">calendar_today</span> Oct 24
+                                        </span>
+<span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-[10px] font-bold uppercase">Personal</span>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold group-hover:text-primary transition-colors">Review monthly budget and savings</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase">
+<span class="material-symbols-outlined text-xs">calendar_today</span> Oct 25
+                                        </span>
+<span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-[10px] font-bold uppercase">Personal</span>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow border-l-4 border-l-red-500">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-bold group-hover:text-primary transition-colors">Client Emergency Call: Server Down</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-[10px] font-bold text-red-500 uppercase">
+<span class="material-symbols-outlined text-xs">priority_high</span> Critical Priority
+                                        </span>
+<span class="px-2 py-0.5 rounded-md bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-bold uppercase">Work</span>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined">task_alt</span>
+                                Completed Recently
+                            </h3>
+</div>
+<div class="grid gap-3 opacity-60">
+<div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl flex items-center gap-4">
+<input checked="" class="w-5 h-5 rounded border-primary bg-primary text-white" disabled="" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-medium line-through">Buy groceries for the week</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase">Completed 2h ago</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-4 rounded-xl flex items-center gap-4">
+<input checked="" class="w-5 h-5 rounded border-primary bg-primary text-white" disabled="" type="checkbox"/>
+<div class="flex-1">
+<h4 class="text-sm font-medium line-through">Submit tax returns</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase">Completed Yesterday</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>
