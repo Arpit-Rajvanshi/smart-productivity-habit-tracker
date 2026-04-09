@@ -1,13 +1,20 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "FocusFlow Production Backend",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
+    "build": "echo 'No build step required for production Node.js'",
+    "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "productivity",
+    "saas",
+    "habit-tracker"
+  ],
+  "author": "Arpit Rajvanshi",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
