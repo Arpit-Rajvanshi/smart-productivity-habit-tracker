@@ -11,6 +11,7 @@ const errorHandler = (err, req, res, next) => {
         success: false,
         status: statusCode,
         message: message,
+        internal: err.message, // Explicitly send the internal message
         stack: process.env.NODE_ENV === 'production' ? null : err.stack,
     });
 };

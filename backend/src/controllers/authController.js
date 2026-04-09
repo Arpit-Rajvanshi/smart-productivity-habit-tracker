@@ -91,6 +91,23 @@ class AuthController {
             next(err);
         }
     }
+
+    static async testConnection(req, res, next) {
+        try {
+            const { rows } = await db.query('SELECT NOW()');
+            res.json({
+                success: true,
+                message: 'Database connection verified!',
+                time: rows[0].now,
+                env: {
+                    node_env: process.env.NODE_ENV,
+                    has_db_url: !!process.env.DATABASE_URL
+                }
+            });
+        } catch (err) {
+            next(err);
+        }
+    }
 }
 
 module.exports = AuthController;
